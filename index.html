@@ -9,5 +9,36 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+        });
+
+        // Disable Developer Tools Keyboard Shortcuts
+        document.onkeydown = function(e) {
+            // Disable F12 (Developer Tools)
+            if (e.key === "F12") {
+                return false;
+            }
+            // Disable Ctrl+Shift+I (Inspect Element)
+            if (e.ctrlKey && e.shiftKey && e.key === "I") {
+                return false;
+            }
+            // Disable Ctrl+Shift+J (Console)
+            if (e.ctrlKey && e.shiftKey && e.key === "J") {
+                return false;
+            }
+            // Disable Ctrl+U (View Source)
+            if (e.ctrlKey && e.key === "U") {
+                return false;
+            }
+
+            if(e.ctrlKey && e.shiftKey && e.key === "C"){
+              return false;
+            }
+        };
+    </script>
+    </script>
   </body>
 </html>
